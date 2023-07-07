@@ -11,6 +11,7 @@ To run, run the command:
 
 and then you can enter Scheme code.
 
+I guess next up is Libdragon integration using FFI.
 
 This is based on the following fork of TinyScheme:
 
