@@ -1159,7 +1159,7 @@ static pointer mk_atom(scheme *sc, char *q)
                                                from now on */
 					p++;
 					if ((*p == '-') || (*p == '+') ||
-					    isdigit(*p)) {
+					    isdigit((int)*p)) {
 						continue;
 					}
 				}
@@ -3709,6 +3709,8 @@ static pointer opexe_3(scheme *sc, enum scheme_opcodes op)
 		case OP_GEQ:
 			comp_func = num_ge;
 			break;
+		default:
+			break;
 		}
 		x = sc->args;
 		v = nvalue(car(x));
@@ -3925,12 +3927,16 @@ static pointer opexe_4(scheme *sc, enum scheme_opcodes op)
 		case OP_OPEN_INOUTFILE:
 			prop = port_input | port_output;
 			break;
+		default:
+			break;
 		}
 		p = port_from_filename(sc, strvalue(car(sc->args)), prop);
 		if (p == sc->NIL) {
 			s_return(sc, sc->F);
 		}
 		s_return(sc, p);
+	default:
+		break;
 	}
 
 #if USE_STRING_PORTS
@@ -3945,6 +3951,8 @@ static pointer opexe_4(scheme *sc, enum scheme_opcodes op)
 			break;
 		case OP_OPEN_INOUTSTRING:
 			prop = port_input | port_output;
+			break;
+		default:
 			break;
 		}
 		p = port_from_string(sc, strvalue(car(sc->args)),
