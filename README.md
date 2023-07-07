@@ -1,3 +1,19 @@
+# TinyScheme 64
+
+
+TinyScheme for your Nintendo 64!
+
+To use, you will need a console, a flashcart, and UNFLoader.
+
+To run, run the command:
+
+`UNFLoader -r TinyScheme_64.z64 -d`
+
+and then you can enter Scheme code.
+
+
+This is based on the following fork of TinyScheme:
+
 # tinyscheme-embedded
 Stripped and reorganized version of Tinyscheme for embedded enviroments.
 In other words, this is a casual attempt to create a platform agnostic Scheme while being still useful.
